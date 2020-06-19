@@ -21,6 +21,7 @@ module OAI
     attr_reader :doc, :resumption_token, :resumption_block
 
     def initialize(doc, &resumption_block)
+      puts "D:#{doc.inspect}"
       @doc = doc
       @resumption_token = xpath(doc, './/resumptionToken')
       @resumption_block = resumption_block
