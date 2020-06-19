@@ -46,6 +46,10 @@ module OAI
 	      end
            end
       end
+      if message == "either 'metadataPrefix' or 'resumptionToken' is required"
+        puts "BYPASSED ERROR"
+        return
+      end
       raise OAI::Exception.new(message, code)
     end
 
