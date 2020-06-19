@@ -28,10 +28,10 @@ module OAI
 
       # throw an exception if there was an error
       error = xpath_first(doc, './/error')
-	puts "Error#{error.inspect}"
-	puts "Class:#{error.class.to_s}"
-	puts "Message:#{error.text}"
-	puts "Code:#{error.attributes['code']}"
+	#puts "Error#{error.inspect}"
+	#puts "Class:#{error.class.to_s}"
+	#puts "Message:#{error.text}"
+	#puts "Code:#{error.attributes['code']}"
       return unless error
 
       case error.class.to_s
@@ -51,6 +51,8 @@ module OAI
 	      end
            end
       end
+      puts "M:#{message}"
+      puts "C:#{code}"
       raise OAI::Exception.new(message, code)
     end
 
