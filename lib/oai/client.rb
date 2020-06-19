@@ -217,7 +217,7 @@ module OAI
       responseClass.new(do_request(verb, opts)) do |response|
 	puts "R:#{response.inspect}"
         responseClass.new \
-          do_request(verb, :resumption_token => response.resumption_token)
+          do_request(verb, :resumption_token => response.resumption_token, :metadata_prefix => 'marc21')
       end
     end
 
