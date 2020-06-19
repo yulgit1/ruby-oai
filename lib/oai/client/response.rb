@@ -53,6 +53,7 @@ module OAI
       end
       puts "M:#{message}"
       puts "C:#{code}"
+      return if message == "either 'metadataPrefix' or 'resumptionToken' is required"
       raise OAI::Exception.new(message, code)
     end
 
